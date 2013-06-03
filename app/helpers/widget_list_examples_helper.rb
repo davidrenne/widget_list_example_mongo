@@ -1,0 +1,2 @@
+module WidgetListExamplesHelper
+end

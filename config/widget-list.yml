@@ -1,0 +1,24 @@
+#For connection examples see: http://sequel.rubyforge.org/rdoc/files/doc/opening_databases_rdoc.html
+
+development:
+  #For some reason sqlite:// for a memory table doesnt work on mac
+  :primary:     sqlite://<%= (RUBY_PLATFORM.downcase =~ /ming/) ?  Rails.root.join("db", "development.sqlite3").to_s[2..-1] : Rails.root.join("db", "development.sqlite3") %>
+
+  #For our secondary connection, we point to the prospective region inside of database.yml for your active record connections
+  :secondary:   development
+  :api_mode:    false
+
+test:
+  :primary:     sqlite://<%= (RUBY_PLATFORM.downcase =~ /ming/) ?  Rails.root.join("db", "test.sqlite3").to_s[2..-1] : Rails.root.join("db", "test.sqlite3") %>
+  :secondary:   test
+  :api_mode:    true
+
+release:
+  :primary:     sqlite://<%= (RUBY_PLATFORM.downcase =~ /ming/) ?  Rails.root.join("db", "development.sqlite3").to_s[2..-1] : Rails.root.join("db", "development.sqlite3") %>
+  :secondary:   release
+  :api_mode:    false
+
+production:
+  :primary:     sqlite://
+  :secondary:   production
+  :api_mode:    false

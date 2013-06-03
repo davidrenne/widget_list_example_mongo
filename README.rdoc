@@ -1,0 +1,5 @@
+== Example for widget_list
+
+This is a rails app that runs widget_list.
+
+In order to run it, you must first run `rake db:migrate` to create the sessions table inside your SQLLite test DB.
