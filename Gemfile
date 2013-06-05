@@ -5,6 +5,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+=begin
 gem 'pg'
 gem 'activerecord-postgresql-adapter'  
 gem 'activerecord-oracle_enhanced-adapter'
@@ -16,6 +17,9 @@ group :test, :development do
   gem 'selenium-webdriver'  
   gem 'spork'
 end
+=end
+
+gem "mongoid", "3.1.4"
 
 #
 # Bleeding edge widget_list is always best just in case I dont bundle the gem and post to http://rubygems.org
